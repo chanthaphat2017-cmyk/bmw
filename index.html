@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BMW Thailand</title>
+  <meta name="description" content="BMW Thailand – ยนตรกรรมสมรรถนะสูง นวัตกรรม และบริการครบวงจร"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════
+     NAVBAR
+═══════════════════════════════════════════════ -->
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo" onclick="showPage('home');return false;" id="logo-link">
+      <img src="bmw-logo.jpg" alt="BMW Logo" class="nav-bmw-logo" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="#" id="nav-home"       class="nav-link active"  onclick="showPage('home');return false;">หน้าแรก</a></li>
+      <li><a href="#" id="nav-about"      class="nav-link"         onclick="showPage('about');return false;">เกี่ยวกับเรา</a></li>
+      <li><a href="#" id="nav-models"     class="nav-link"         onclick="showPage('models');return false;">รุ่นรถ</a></li>
+      <li><a href="#" id="nav-innovation" class="nav-link"         onclick="showPage('innovation');return false;">นวัตกรรม</a></li>
+      <li><a href="#" id="nav-news"       class="nav-link"         onclick="showPage('news');return false;">ข่าวสาร</a></li>
+      <li><a href="#" id="nav-contact"    class="nav-link"         onclick="showPage('contact');return false;">ติดต่อ</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════════
+     PAGE: HOME (หน้าแรก)
+═══════════════════════════════════════════════ -->
+<main id="page-home" class="page active">
+
+  <!-- HERO ─── M Logo + Storyboard -->
+  <section class="home-hero">
+    <!-- BMW Hero Brand Area -->
+    <div class="bmw-brand-hero">
+      <div class="bmw-title-row">
+        <h1 class="bmw-hero-title">BMW</h1>
+        <div class="bmw-m-stripes">
+          <span class="s-blue"></span>
+          <span class="s-purple"></span>
+          <span class="s-red"></span>
+        </div>
+      </div>
+      <p class="bmw-hero-tagline">THE ULTIMATE DRIVING MACHINE</p>
+      <p class="bmw-hero-desc">สัมผัสประสบการณ์ยนตรกรรมระดับพรีเมียม ขับเคลื่อนด้วยนวัตกรรมและขุมพลังแห่งอนาคต</p>
+    </div>
+
+    <!-- Storyboard Card -->
+    <div class="storyboard-card">
+      <div class="sb-header">
+        <div class="sb-mpow"><span class="sb-m">M</span><span class="sb-pow">POWER</span></div>
+        <div class="sb-title-text">STORYBOARD: EVOLUTION<br>OF BMW M MODELS</div>
+        <!-- Small BMW logo -->
+        <img src="bmw-logo.jpg" alt="BMW" class="sb-bmwlogo-img" />
+      </div>
+      <div class="sb-grid">
+        <div class="sb-cell">
+          <div class="sb-thumb sb-t1"></div>
+          <p>The Pioneer (1978)</p>
+        </div>
+        <div class="sb-cell">
+          <div class="sb-thumb sb-t2"></div>
+          <p>The Icon (1986)</p>
+        </div>
+        <div class="sb-cell">
+          <div class="sb-thumb sb-t3"></div>
+          <p>The Performance King</p>
+        </div>
+        <div class="sb-cell">
+          <div class="sb-thumb sb-t4"></div>
+          <p>The Modern Era (2022)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT US -->
+  <section class="about-section">
+    <div class="about-label">About us</div>
+    <div class="about-card">
+      <p><em>We are fully embracing the era of electric vehicles, which goes beyond just clean energy. It encompasses manufacturing
+      processes based on the Circular Economy to preserve the joy of driving for the future. Intelligent connectivity technology
+      enhances the driving experience with advanced driver assistance systems and wireless software upgrades to keep your vehicle
+      up-to-date. At the heart of this, power is combined with sustainability through advanced engine engineering and the use of
+      lightweight materials, delivering maximum performance while minimizing energy consumption and emissions.</em></p>
+    </div>
+  </section>
+
+  <!-- BMW M DIVISION -->
+  <section class="m-division">
+    <div class="m-div-topbar">
+      <div class="m-div-stripes"><span class="s-blue"></span><span class="s-purple"></span><span class="s-red"></span></div>
+      <span class="m-div-label">BMW</span>
+    </div>
+    <div class="m-div-body">
+      <div class="m-div-card">
+        <p><em>The BMW M division, originally founded as BMW Motorsport GmbH in 1972, serves as the high-performance subsidiary of BMW.
+        It was created to consolidate BMW's racing activities, but its influence quickly expanded to transforming mass-produced vehicles
+        into high-performance machines.</em></p>
+      </div>
+      <div class="m-div-bmwlogo">
+        <img src="bmw-logo.jpg" alt="BMW Logo" class="m-div-bmwlogo-img" />
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS SECTION -->
+  <section class="products-section">
+    <div class="products-btn-row">
+      <button class="products-btn" id="prod-btn">ผลิตภัณฑ์และบริการ</button>
+    </div>
+    <div class="products-row">
+      <div class="prod-card">
+        <div class="prod-img prod-i7">
+          <div class="prod-img-bg" style="background-image: url('BMW i7 + BMW 750E.jpg');"></div>
+          <img src="BMW i7 + BMW 750E.jpg" alt="BMW i7" class="prod-real-img"/>
+        </div>
+        <div class="prod-info">
+          <h3>BMW i7</h3>
+          <h4 class="prod-sub">(Electric Luxury Sedan)</h4>
+          <p>The car gliding silently through a modern city landscape. An electric performance meets a pioneering spirit. Experience the future of luxury mobility.</p>
+        </div>
+      </div>
+      <div class="prod-card">
+        <div class="prod-img prod-m4">
+          <div class="prod-img-bg" style="background-image: url('BMW M4 + BMW E36.jpg');"></div>
+          <img src="BMW M4 + BMW E36.jpg" alt="BMW M4" class="prod-real-img"/>
+        </div>
+        <div class="prod-info">
+          <h3>BMW M4</h3>
+          <h4 class="prod-sub">(The Master of Performance)</h4>
+          <p>A track beast at dawn with the engine roaring. Domination the track, built for those who live at the limit of everything and stop next now.</p>
+        </div>
+      </div>
+      <div class="prod-card">
+        <div class="prod-img prod-rr">
+          <div class="prod-img-bg" style="background-image: url('BMW S1000RR + BMW 540i + BMW M1000RR.jpg');"></div>
+          <img src="BMW S1000RR + BMW 540i + BMW M1000RR.jpg" alt="BMW S1000RR" class="prod-real-img"/>
+        </div>
+        <div class="prod-info">
+          <h3>BMW S1000RR</h3>
+          <h4 class="prod-sub">(The Precision Machine)</h4>
+          <p>A wind swept speed road with the precision of machine. Conquer every curve. Choices for those who love the thrill of precision.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BANNER ─── M Cars Comparison + Autoverse + BMW M World -->
+  <section class="banner-section">
+    <!-- Left: M Cars -->
+    <div class="banner-cars">
+      <div class="bc-stripe-row">
+        <span class="bc-s bc-blue"></span>
+        <span class="bc-s bc-purple"></span>
+        <span class="bc-s bc-red"></span>
+      </div>
+      <div class="bc-cards-grid">
+        <!-- Card 1: M5 F90 -->
+        <div class="bc-card">
+          <div class="bc-car-img-wrap">
+            <div class="bc-car-img-bg" style="background-image: url('M5 F90.jpg');"></div>
+            <img src="M5 F90.jpg" alt="BMW M5 F90" class="bc-car-real-img"/>
+          </div>
+          <div class="bc-card-info">
+            <b>M5 F90</b>
+            <span>POWER: 600 HP (441 kW)</span>
+            <span>ENGINE: 4.4L V8 TWIN TURBO</span>
+            <span>TORQUE: 750 NM</span>
+            <span>TOP SPEED: 250 KM/H</span>
+          </div>
+        </div>
+
+        <!-- Card 2: M4 COMPETITION -->
+        <div class="bc-card">
+          <div class="bc-car-img-wrap">
+            <div class="bc-car-img-bg" style="background-image: url('M4.jpg');"></div>
+            <img src="M4.jpg" alt="BMW M4 Competition" class="bc-car-real-img"/>
+          </div>
+          <div class="bc-card-info">
+            <b>M4 COMPETITION</b>
+            <span>POWER: 503 TO 523 HP</span>
+            <span>ENGINE: 3.0L INLINE 6 TWIN TURBO</span>
+            <span>TORQUE: 650 NM</span>
+            <span>TOP SPEED: 252 KM/H</span>
+          </div>
+        </div>
+
+        <!-- Card 3: M4 G82 -->
+        <div class="bc-card">
+          <div class="bc-car-img-wrap">
+            <div class="bc-car-img-bg" style="background-image: url('M4 G82.jpg');"></div>
+            <img src="M4 G82.jpg" alt="BMW M4 G82" class="bc-car-real-img"/>
+          </div>
+          <div class="bc-card-info">
+            <b>M4 G82</b>
+            <span>POWER: 503 HP</span>
+            <span>ENGINE: 3.0L P50 TWIN TURBO</span>
+            <span>TORQUE: 650 NM</span>
+            <span>TOP SPEED: 250 KM/H</span>
+          </div>
+        </div>
+      </div>
+      <div class="bc-bottom-text">BMW M PERFORMANCE. POWER. PRECISION. PASSION <span class="bc-red">SPEED</span> 250 KM/H</div>
+    </div>
+
+    <!-- Right: Autoverse + M World -->
+    <div class="banner-right-col">
+      <!-- Autoverse -->
+      <div class="autoverse-block">
+        <div class="av-inner">
+          <div class="av-top-label">ULTIMATE CAR EDIT</div>
+          <div class="av-brand-name">AUTOVERSE</div>
+          <div class="av-links">
+            <span>Face Primary Files</span>
+            <span>Listings &amp; Reviews</span>
+            <span>Auctions and More...</span>
+          </div>
+        </div>
+      </div>
+      <!-- BMW M World -->
+      <div class="mworld-block">
+        <div class="mw-inner">
+          <div class="mw-stripes">
+            <span class="mw-s mw-blue"></span>
+            <span class="mw-s mw-purple"></span>
+            <span class="mw-s mw-red"></span>
+          </div>
+          <div class="mw-title">BMW <span class="mw-m-letter">M</span></div>
+          <div class="mw-tagline">THE MOST POWERFUL LETTER IN THE WORLD.</div>
+          <div class="mw-yt">youtube.com/bmwcanada</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main><!-- /page-home -->
+
+<!-- ═══════════════════════════════════════════════
+     PAGE: ABOUT (เกี่ยวกับเรา)
+═══════════════════════════════════════════════ -->
+<main id="page-about" class="page">
+  <section class="about-page-hero">
+    <div class="aph-label">About us</div>
+    <div class="aph-card">
+      <p><em>We are fully embracing the era of electric vehicles, which goes beyond just clean energy. It encompasses manufacturing
+      processes based on the Circular Economy to preserve the joy of driving for the future. Intelligent connectivity technology
+      enhances the driving experience with advanced driver assistance systems and wireless software upgrades to keep your vehicle
+      up-to-date. At the heart of this, power is combined with sustainability through advanced engine engineering and the use of
+      lightweight materials, delivering maximum performance while minimizing energy consumption and emissions.</em></p>
+    </div>
+  </section>
+
+  <section class="about-page-m">
+    <div class="apm-topbar">
+      <div class="apm-stripes"><span class="s-blue"></span><span class="s-purple"></span><span class="s-red"></span></div>
+      <span class="apm-label">BMW</span>
+    </div>
+    <div class="apm-body">
+      <div class="apm-card">
+        <p><em>The BMW M division, originally founded as BMW Motorsport GmbH in 1972, serves as the high-performance subsidiary of BMW.
+        It was created to consolidate BMW's racing activities, but its influence quickly expanded to transforming mass-produced vehicles
+        into high-performance machines.</em></p>
+      </div>
+      <img src="bmw-logo.jpg" alt="BMW Logo" class="apm-bmwlogo-img" />
+    </div>
+  </section>
+</main>
+
+<!-- ═══════════════════════════════════════════════
+     PAGE: MODELS (รุ่นรถ)
+═══════════════════════════════════════════════ -->
+<main id="page-models" class="page">
+  <section class="models-section">
+    <!-- M watermark behind grid -->
+    <div class="models-watermark" aria-hidden="true">M</div>
+    <div class="models-grid">
+
+      <div class="model-cell top-left">
+        <div class="model-img-wrap">
+          <div class="model-img-bg" style="background-image: url('bmw-750e.jpg');"></div>
+          <img src="bmw-750e.jpg" alt="BMW 750E" class="model-real-img"/>
+        </div>
+        <div class="model-text">
+          <h3>BMW 750E</h3>
+          <p>BMW 750e xDrive เป็นปลั๊กอินไฮบริดที่มีกำลังระบบรวม 489 แรงม้า น้ำมันเบนซินที่วิ่งได้ไกลในโหมด EV ถึง 85 กม.
+          โดดเด่นด้วยนวัตกรรมความบันเทิงและเทคโนโลยีออดิโอสุดพิเศษ BMW Theatre Screen 31.3 นิ้ว แนะนำให้แก่ลูกค้าที่ต้องการความสมดุลสูงสุด
+          พร้อมมีโปรแกรมตรวจสุขภาพสำหรับผู้ที่ใส่ใจสุขภาพและความสะดวกสบายและสงผมในยนตรกรรมนี้</p>
+        </div>
+      </div>
+
+      <div class="model-cell top-right">
+        <div class="model-img-wrap">
+          <div class="model-img-bg" style="background-image: url('bmw-e36.jpg');"></div>
+          <img src="bmw-e36.jpg" alt="BMW E36" class="model-real-img"/>
+        </div>
+        <div class="model-text">
+          <h3>BMW E36</h3>
+          <p>BMW E36 คือ "มิตรที่ดีที่สุดบนถนน" ฉบับ 3D ที่เอาตัวออดิโอจัดเต็มมาสอดแทรกระหว่างประสบการณ์ 219 ไมล์ต่อชั่วโมง
+          มีเสียงและแสงสีนำความสนุกกว่าสองร้อยยี่สิบไมล์ มนขึ้นไปในทุกรุ่นสเปคยอดนิยมน้อมชมชอบกันมานาน</p>
+        </div>
+      </div>
+
+      <div class="model-cell bot-left">
+        <div class="model-img-wrap">
+          <div class="model-img-bg" style="background-image: url('bmw-540i.jpg');"></div>
+          <img src="bmw-540i.jpg" alt="BMW 540i" class="model-real-img"/>
+        </div>
+        <div class="model-text">
+          <h3>BMW 540i</h3>
+          <p>BMW 540i คือยนตรกรรมชุดสมบูรณ์แบบในหัวใจเต็ม 5 ที่ออกแบบพอดีตัวนักขับทุกคนออกไป แบบมนุษย์และสหประชาชาติ
+          และน้อมชมชอบนี่ มีบริจัยออนไลน์เสมอเป็นปัจจุบันสำหรับความจริงใจ ตัวอย่างความซื่อสัตย์ที่ยิ่งใหญ่ที่สุดในชีวิตนี้</p>
+        </div>
+      </div>
+
+      <div class="model-cell bot-right">
+        <div class="model-img-wrap">
+          <div class="model-img-bg" style="background-image: url('bmw-m1000rr.jpg');"></div>
+          <img src="bmw-m1000rr.jpg" alt="BMW M1000 RR 2026" class="model-real-img"/>
+        </div>
+        <div class="model-text">
+          <h3>BMW M1000 RR 2026</h3>
+          <p>คือสุดยอดสุดปลายสิ้นสุดกระบวนการที่ดีที่สุดในการทำรายการสนับสนุนโมตอร์สปอร์ต ด้วย 4 สูบต่อ 999 ซีซี ที่กินขุม 999 ซีซี
+          ในกิจกรรม BMW Motorrad 218 แรงม้า ตัวเลขนั้นเท่าเดิมต่อเดิม Winglets 3.0 ที่ค้ำตรรกเอกอดนาน</p>
+        </div>
+      </div>
+
+    </div><!-- /models-grid -->
+    <div class="models-pager">
+      <button class="pg-btn">ก่อนหน้า</button>
+      <button class="pg-num">1</button>
+      <button class="pg-num active">2</button>
+      <button class="pg-num">3</button>
+      <span class="pg-dot">...</span>
+      <button class="pg-num">7</button>
+      <button class="pg-num">8</button>
+      <button class="pg-btn">ถัดไป</button>
+    </div>
+  </section>
+</main>
+
+<!-- ═══════════════════════════════════════════════
+     PAGE: INNOVATION (นวัตกรรม)
+═══════════════════════════════════════════════ -->
+<main id="page-innovation" class="page">
+
+  <!-- HERO SECTION -->
+  <section class="inno-hero">
+    <div class="inno-hero-overlay"></div>
+    <div class="inno-bg-logo">
+      <img src="bmw-logo.jpg" alt="BMW Watermark" class="inno-bg-logo-img" />
+    </div>
+    <div class="inno-hero-content">
+      <div class="inno-hero-tag">BMW GROUP INNOVATION</div>
+      <h1 class="inno-hero-title">Shaping the<br><span class="inno-blue">Future</span> of Mobility</h1>
+      <p class="inno-hero-sub">จากพลังงานไฟฟ้า ปัญญาประดิษฐ์ ไปจนถึงการขับขี่อัตโนมัติ<br>BMW คือผู้นำในทุกมิติของนวัตกรรมยานยนต์</p>
+      <div class="inno-m-stripes">
+        <span class="inno-stripe blue"></span>
+        <span class="inno-stripe purple"></span>
+        <span class="inno-stripe red"></span>
+      </div>
+    </div>
+    <div class="inno-red-bar"></div>
+  </section>
+
+  <!-- STATS STRIP -->
+  <section class="inno-stats-strip">
+    <div class="inno-stat">
+      <span class="inno-stat-num">100+</span>
+      <span class="inno-stat-label">ปีแห่งวิศวกรรม</span>
+    </div>
+    <div class="inno-stat-divider"></div>
+    <div class="inno-stat">
+      <span class="inno-stat-num">10,000+</span>
+      <span class="inno-stat-label">สิทธิบัตรนวัตกรรม</span>
+    </div>
+    <div class="inno-stat-divider"></div>
+    <div class="inno-stat">
+      <span class="inno-stat-num">30+</span>
+      <span class="inno-stat-label">ศูนย์วิจัยทั่วโลก</span>
+    </div>
+    <div class="inno-stat-divider"></div>
+    <div class="inno-stat">
+      <span class="inno-stat-num">€7B+</span>
+      <span class="inno-stat-label">งบวิจัยพัฒนาต่อปี</span>
+    </div>
+  </section>
+
+  <!-- TECHNOLOGY CARDS -->
+  <section class="inno-tech-section">
+    <div class="inno-section-header">
+      <h2 class="inno-section-title">Core Technologies</h2>
+      <p class="inno-section-sub">เทคโนโลยีที่ขับเคลื่อนอนาคตแห่งการเดินทาง</p>
+    </div>
+    <div class="inno-tech-grid">
+
+      <!-- Card 1: EV -->
+      <div class="inno-tech-card" id="itc-ev">
+        <div class="inno-tc-icon-wrap">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="inno-tc-icon">
+            <circle cx="24" cy="24" r="23" stroke="#1C69D4" stroke-width="1.5"/>
+            <path d="M26 10L14 26h12l-4 12 14-16H14l4-12H26z" fill="#1C69D4" opacity="0.9"/>
+          </svg>
+        </div>
+        <h3 class="inno-tc-title">BMW eDrive</h3>
+        <p class="inno-tc-body">ระบบขับเคลื่อนไฟฟ้าประสิทธิภาพสูง ด้วยมอเตอร์ BMW eDrive Gen 6 ให้พลังสูงสุดและการใช้พลังงานอย่างชาญฉลาด</p>
+        <div class="inno-tc-tags">
+          <span>Zero Emission</span><span>Fast Charge</span><span>800V Architecture</span>
+        </div>
+      </div>
+
+      <!-- Card 2: Autonomous -->
+      <div class="inno-tech-card" id="itc-auto">
+        <div class="inno-tc-icon-wrap">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="inno-tc-icon">
+            <circle cx="24" cy="24" r="23" stroke="#1C69D4" stroke-width="1.5"/>
+            <circle cx="24" cy="24" r="8" stroke="#1C69D4" stroke-width="2"/>
+            <line x1="24" y1="1" x2="24" y2="10" stroke="#1C69D4" stroke-width="2" stroke-linecap="round"/>
+            <line x1="24" y1="38" x2="24" y2="47" stroke="#1C69D4" stroke-width="2" stroke-linecap="round"/>
+            <line x1="1" y1="24" x2="10" y2="24" stroke="#1C69D4" stroke-width="2" stroke-linecap="round"/>
+            <line x1="38" y1="24" x2="47" y2="24" stroke="#1C69D4" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3 class="inno-tc-title">Automated Driving</h3>
+        <p class="inno-tc-body">ระบบช่วยเหลือการขับขี่ขั้นสูง พร้อม Personal Pilot L3 และเซ็นเซอร์รวม LiDAR, Radar, Camera เพื่อความปลอดภัยสูงสุด</p>
+        <div class="inno-tc-tags">
+          <span>Level 3 SAE</span><span>LiDAR Fusion</span><span>AI Navigation</span>
+        </div>
+      </div>
+
+      <!-- Card 3: iDrive -->
+      <div class="inno-tech-card" id="itc-idrive">
+        <div class="inno-tc-icon-wrap">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="inno-tc-icon">
+            <circle cx="24" cy="24" r="23" stroke="#1C69D4" stroke-width="1.5"/>
+            <rect x="10" y="16" width="28" height="18" rx="3" stroke="#1C69D4" stroke-width="1.8"/>
+            <line x1="16" y1="20" x2="32" y2="20" stroke="#1C69D4" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="16" y1="24" x2="27" y2="24" stroke="#1C69D4" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="33" cy="30" r="2" fill="#1C69D4"/>
+          </svg>
+        </div>
+        <h3 class="inno-tc-title">BMW iDrive 9</h3>
+        <p class="inno-tc-body">ระบบ Infotainment AI-driven ที่เรียนรู้พฤติกรรมผู้ขับขี่ ผสาน Curved Display ขนาด 34 นิ้ว กับ BMW Assistant เสียง</p>
+        <div class="inno-tc-tags">
+          <span>AI Assistant</span><span>Over-the-Air</span><span>34" Display</span>
+        </div>
+      </div>
+
+      <!-- Card 4: Sustainability -->
+      <div class="inno-tech-card" id="itc-sustain">
+        <div class="inno-tc-icon-wrap">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="inno-tc-icon">
+            <circle cx="24" cy="24" r="23" stroke="#1C69D4" stroke-width="1.5"/>
+            <path d="M24 10 C18 16, 12 20, 14 28 C16 35, 24 38, 24 38 C24 38, 32 35, 34 28 C36 20, 30 16, 24 10Z" stroke="#1C69D4" stroke-width="1.8" fill="none"/>
+            <path d="M20 26 C20 22, 24 18, 24 18 C24 18, 28 22, 28 26" stroke="#1C69D4" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3 class="inno-tc-title">Sustainability</h3>
+        <p class="inno-tc-body">BMW มุ่งสู่ Carbon Neutral ปี 2050 ผ่านการใช้วัสดุรีไซเคิล ห่วงโซ่อุปทานสีเขียว และพลังงานหมุนเวียน 100%</p>
+        <div class="inno-tc-tags">
+          <span>Carbon Neutral 2050</span><span>Circular Economy</span>
+        </div>
+      </div>
+
+      <!-- Card 5: Connected -->
+      <div class="inno-tech-card" id="itc-connected">
+        <div class="inno-tc-icon-wrap">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="inno-tc-icon">
+            <circle cx="24" cy="24" r="23" stroke="#1C69D4" stroke-width="1.5"/>
+            <circle cx="24" cy="24" r="4" fill="#1C69D4"/>
+            <path d="M14 34 C14 28, 18 24, 24 24" stroke="#1C69D4" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M34 14 C34 20, 30 24, 24 24" stroke="#1C69D4" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M8 20 C10 14, 16 10, 24 10" stroke="#1C69D4" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M40 28 C38 34, 32 38, 24 38" stroke="#1C69D4" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3 class="inno-tc-title">Connected Services</h3>
+        <p class="inno-tc-body">BMW ConnectedDrive เชื่อมรถยนต์กับโลกดิจิทัล พร้อม 5G Connectivity, Remote Services และ OTA Software Updates</p>
+        <div class="inno-tc-tags">
+          <span>5G Ready</span><span>Remote Control</span><span>OTA Update</span>
+        </div>
+      </div>
+
+      <!-- Card 6: Hydrogen -->
+      <div class="inno-tech-card" id="itc-hydrogen">
+        <div class="inno-tc-icon-wrap">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="inno-tc-icon">
+            <circle cx="24" cy="24" r="23" stroke="#1C69D4" stroke-width="1.5"/>
+            <text x="12" y="30" font-family="Barlow" font-size="18" font-weight="700" fill="#1C69D4">H₂</text>
+          </svg>
+        </div>
+        <h3 class="inno-tc-title">Hydrogen FCEV</h3>
+        <p class="inno-tc-body">BMW iX5 Hydrogen เปิดประตูสู่ยุค Fuel Cell ด้วย Toyota FCEV Stack ที่ให้พิสัยขับขี่ไกลกว่า 500 km ในทุกสภาพอากาศ</p>
+        <div class="inno-tc-tags">
+          <span>500km Range</span><span>FCEV Stack</span><span>Zero Emission</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SPOTLIGHT: Vision Neue Klasse -->
+  <section class="inno-spotlight">
+    <div class="inno-spot-text">
+      <div class="inno-spot-eyebrow">THE NEXT ERA</div>
+      <h2 class="inno-spot-title">BMW Neue Klasse</h2>
+      <p class="inno-spot-body">รถยนต์แห่งอนาคตที่นิยามใหม่ทุกมิติ ทั้ง Platform ไฟฟ้า, ระบบ iDrive รุ่นใหม่, และการออกแบบที่สะอาดและล้ำสมัยกว่าที่เคย คาดการณ์เปิดตัวปี 2025</p>
+      <div class="inno-spot-chips">
+        <div class="inno-chip"><span class="chip-icon">⚡</span>ขับขี่ไฟฟ้า 100%</div>
+        <div class="inno-chip"><span class="chip-icon">🧠</span>AI-Native Platform</div>
+        <div class="inno-chip"><span class="chip-icon">♻️</span>ยั่งยืนทุกขั้นตอน</div>
+      </div>
+    </div>
+    <div class="inno-spot-visual">
+      <div class="inno-spot-badge">
+        <div class="inno-spot-badge-inner">
+          <span class="inno-spot-year">2025</span>
+          <span class="inno-spot-label-sm">NEUE KLASSE</span>
+        </div>
+      </div>
+      <div class="inno-spot-rings">
+        <div class="ring r1"></div>
+        <div class="ring r2"></div>
+        <div class="ring r3"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INNOVATION MENU (existing, redesigned) -->
+  <section class="inno-nav-section">
+    <h2 class="inno-nav-title">Explore Innovation</h2>
+    <div class="inno-nav-grid">
+      <div class="inno-nav-card">
+        <h3>Vision &amp; Future</h3>
+        <ul>
+          <li>Concept Cars &amp; Design</li>
+          <li>Sustainability</li>
+        </ul>
+      </div>
+      <div class="inno-nav-card">
+        <h3>Core Technologies</h3>
+        <ul>
+          <li>Drive Technologies</li>
+          <li>Automated Driving</li>
+          <li>Connected Car &amp; Digital Services</li>
+        </ul>
+      </div>
+      <div class="inno-nav-card">
+        <h3>Innovation Network</h3>
+        <ul>
+          <li>Technology Trend Radar</li>
+          <li>BMW Startup Garage &amp; Open Innovation</li>
+          <li>Tech Offices &amp; IT Hubs</li>
+        </ul>
+      </div>
+      <div class="inno-nav-card">
+        <h3>Research &amp; Awards</h3>
+        <ul>
+          <li>BMW Group Research Center</li>
+          <li>Innovation Awards</li>
+          <li>Academic Partnerships</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+
+<!-- ═══════════════════════════════════════════════
+     PAGE: NEWS (ข่าวสาร)
+═══════════════════════════════════════════════ -->
+<main id="page-news" class="page">
+  <!-- Hero: Full wide cockpit banner -->
+  <section class="news-hero-split">
+    <div class="nhs-img-wrap">
+      <img src="bmw-news-hero.jpg" alt="BMW Autonomous Driving Cockpit" class="news-hero-real-img" />
+    </div>
+  </section>
+
+  <!-- News cards -->
+  <section class="news-cards-section">
+    <div class="news-cards-row">
+      <div class="news-card" id="nc1">
+        <div class="nc-img">
+          <img src="bmw-news-1.jpg" alt="Latest Insights" class="nc-real-img" />
+          <div class="nc-date">14/12/2026</div>
+        </div>
+        <p class="nc-caption">Latest Insights: "Stay at the Forefront of BMW Innovation."</p>
+      </div>
+      <div class="news-card" id="nc2">
+        <div class="nc-img">
+          <img src="bmw-news-2.jpg" alt="Future Tech" class="nc-real-img" />
+          <div class="nc-date">14/06/2026</div>
+        </div>
+        <p class="nc-caption">Future Tech: "Engineering Tomorrow: Our Vision Unveiled."</p>
+      </div>
+      <div class="news-card" id="nc3">
+        <div class="nc-img">
+          <img src="bmw-news-3.jpg" alt="Engine Innovation" class="nc-real-img" />
+          <div class="nc-date">14/04/2026</div>
+        </div>
+        <p class="nc-caption">"Stay Ahead: Never Miss a Moment of BMW Innovation."</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ═══════════════════════════════════════════════
+     PAGE: CONTACT (ติดต่อ)
+═══════════════════════════════════════════════ -->
+<main id="page-contact" class="page">
+  <section class="contact-section">
+    <h1 class="contact-h1">ติดต่อเรา</h1>
+    <div class="contact-cards">
+      <div class="con-card">
+        <div class="con-icon">📍</div>
+        <h3>ที่อยู่</h3>
+        <p>BMW Thailand<br>87/2 ถนนวิทยุ กรุงเทพฯ 10330</p>
+      </div>
+      <div class="con-card">
+        <div class="con-icon">📞</div>
+        <h3>โทรศัพท์</h3>
+        <p>02-645-4000<br>จันทร์ – เสาร์ 08:00–18:00</p>
+      </div>
+      <div class="con-card">
+        <div class="con-icon">✉️</div>
+        <h3>อีเมล</h3>
+        <p>info@bmw.co.th</p>
+      </div>
+    </div>
+
+    <form class="con-form" id="con-form">
+      <!-- Web3Forms config -->
+      <input type="hidden" name="access_key" value="9e258557-5f37-4836-8f5e-95d717e61fbd" />
+      <input type="hidden" name="subject" value="BMW Thailand — ข้อความจากเว็บไซต์" />
+      <input type="hidden" name="from_name" value="BMW Thailand Website" />
+      <div class="con-row">
+        <input type="text"  id="cf-name"  name="name"    placeholder="ชื่อ – นามสกุล *" required />
+        <input type="email" id="cf-email" name="email"   placeholder="อีเมล *" required />
+      </div>
+      <div class="con-row">
+        <input type="tel" id="cf-phone" name="phone" placeholder="เบอร์โทรศัพท์" />
+        <select id="cf-topic" name="topic">
+          <option value="" disabled selected>หัวข้อที่สนใจ</option>
+          <option value="ทดลองขับ">ทดลองขับ</option>
+          <option value="ข้อมูลรุ่นรถ">ข้อมูลรุ่นรถ</option>
+          <option value="บริการหลังการขาย">บริการหลังการขาย</option>
+          <option value="ค้นหาตัวแทนจำหน่าย">ค้นหาตัวแทนจำหน่าย</option>
+          <option value="อื่นๆ">อื่นๆ</option>
+        </select>
+      </div>
+      <textarea id="cf-msg" name="message" rows="5" placeholder="ข้อความของคุณ *" required></textarea>
+      <button type="submit" id="cf-submit">ส่งข้อความ</button>
+    </form>
+
+    <!-- ADMIN PANEL: ดูข้อมูลที่รับมา -->
+    <div class="con-admin-panel" id="con-admin">
+      <div class="cap-header">
+        <div>
+          <h2 class="cap-title">📋 ข้อมูลที่ได้รับ</h2>
+          <p class="cap-subtitle">ข้อความทั้งหมดที่บันทึกใน Browser (localStorage)</p>
+        </div>
+        <div class="cap-actions">
+          <button class="cap-btn export" id="cap-export" onclick="exportContacts()">⬇ Export CSV</button>
+          <button class="cap-btn clear"  id="cap-clear"  onclick="clearContacts()">🗑 ลบทั้งหมด</button>
+        </div>
+      </div>
+      <div id="cap-table-wrap">
+        <!-- rows injected by JS -->
+      </div>
+      <p id="cap-empty" class="cap-empty">ยังไม่มีข้อมูล — กรอกฟอร์มด้านบนเพื่อทดสอบ</p>
+    </div>
+  </section>
+</main>
+
+
+<!-- ═══════════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════════ -->
+<footer class="site-footer">
+  <div class="footer-main">
+    <!-- Left: nav + socials -->
+    <div class="footer-left">
+      <div class="footer-nav-links">
+        <a href="#" onclick="showPage('home');return false;">หน้าแรก</a>
+        <a href="#" onclick="showPage('about');return false;">เกี่ยวกับเรา</a>
+        <a href="#" onclick="showPage('models');return false;">รุ่นรถ</a>
+        <a href="#" onclick="showPage('innovation');return false;">นวัตกรรม</a>
+      </div>
+      <div class="footer-nav-links">
+        <a href="#" onclick="showPage('news');return false;">ข่าวสาร</a>
+        <a href="#" onclick="showPage('contact');return false;">ติดต่อ</a>
+      </div>
+      <div class="footer-socials">
+        <a href="#" class="soc-icon" id="soc-fb" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="white"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="#" class="soc-icon" id="soc-ig" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="white" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="white" stroke="none"/></svg>
+        </a>
+        <a href="#" class="soc-icon" id="soc-x" aria-label="X">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="white"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="#" class="soc-icon" id="soc-yt" aria-label="YouTube">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="white"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#0f2448"/></svg>
+        </a>
+      </div>
+    </div>
+    <!-- Right: 4 link columns -->
+    <div class="footer-right">
+      <div class="ft-col">
+        <h4>Explore BMW</h4>
+        <ul>
+          <li>Find a Dealer</li>
+          <li>Build Your Own</li>
+          <li>Request a Test Drive</li>
+          <li>Special Offers</li>
+        </ul>
+      </div>
+      <div class="ft-col">
+        <h4>Experience BMW</h4>
+        <ul>
+          <li>BMW M Motorsport</li>
+          <li>BMW i (Electric)</li>
+          <li>BMW Motorrad</li>
+          <li>Sustainability &amp; Innovation</li>
+        </ul>
+      </div>
+      <div class="ft-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li>Newsletter</li>
+          <li>Subscription</li>
+          <li>Warranty &amp; Service</li>
+          <li>Privacy Policy</li>
+          <li>Legal Disclaimer</li>
+        </ul>
+      </div>
+      <div class="ft-col">
+        <h4>About Us</h4>
+        <ul>
+          <li>Corporate Information</li>
+          <li>Careers</li>
+          <li>Press &amp; Media</li>
+          <li>Contact Us</li>
+        </ul>
+      </div>
+    </div>
+    <!-- BMW Logo: inline with footer content -->
+    <div class="footer-logo-col">
+      <img src="bmw-logo.jpg" alt="BMW Logo" class="footer-bmw-logo" />
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
