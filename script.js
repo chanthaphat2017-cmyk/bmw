@@ -20,6 +20,64 @@ function showPage(id) {
 }
 
 /* ============================================================
+   HAMBURGER / MOBILE MENU
+   ============================================================ */
+function toggleMobileMenu() {
+  const links   = document.getElementById('nav-links-list');
+  const burger  = document.getElementById('nav-hamburger');
+  const overlay = document.getElementById('nav-overlay');
+  const isOpen  = links.classList.contains('open');
+  if (isOpen) {
+    closeMobileMenu();
+  } else {
+    links.classList.add('open');
+    burger.classList.add('open');
+    overlay.classList.add('show');
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+function closeMobileMenu() {
+  const links   = document.getElementById('nav-links-list');
+  const burger  = document.getElementById('nav-hamburger');
+  const overlay = document.getElementById('nav-overlay');
+  links.classList.remove('open');
+  burger.classList.remove('open');
+  overlay.classList.remove('show');
+  document.body.style.overflow = '';
+}
+
+/* ============================================================
+   RIPPLE EFFECT — attach to all interactive elements
+   ============================================================ */
+function createRipple(e) {
+  const el   = e.currentTarget;
+  const rect = el.getBoundingClientRect();
+  const size = Math.max(rect.width, rect.height) * 2;
+  const x    = e.clientX - rect.left - size / 2;
+  const y    = e.clientY - rect.top  - size / 2;
+  const ripple = document.createElement('span');
+  ripple.className = 'ripple';
+  ripple.style.cssText = `width:${size}px;height:${size}px;left:${x}px;top:${y}px;`;
+  el.appendChild(ripple);
+  ripple.addEventListener('animationend', () => ripple.remove());
+}
+
+function attachRipples() {
+  const selectors = [
+    '.nav-link', '.pg-btn', '.pg-num', '.products-btn',
+    '.cap-btn', '#cf-submit', '.soc-icon', '.nav-hamburger'
+  ];
+  selectors.forEach(sel => {
+    document.querySelectorAll(sel).forEach(el => {
+      el.removeEventListener('click', createRipple);
+      el.addEventListener('click', createRipple);
+    });
+  });
+}
+
+
+/* ============================================================
    CONTACT FORM — localStorage storage
    ============================================================ */
 const STORAGE_KEY = 'bmw_contact_submissions';
@@ -148,6 +206,17 @@ function escHtml(str) {
    ============================================================ */
 document.addEventListener('DOMContentLoaded', () => {
   showPage('home');
+  attachRipples();
+
+  // Close mobile menu on desktop resize
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 1024) closeMobileMenu();
+  });
+
+  // Close menu with Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeMobileMenu();
+  });
 
   // Pagination
   document.querySelectorAll('.pg-num').forEach(btn => {

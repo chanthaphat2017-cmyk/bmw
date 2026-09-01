@@ -20,16 +20,24 @@
     <a href="#" class="nav-logo" onclick="showPage('home');return false;" id="logo-link">
       <img src="bmw-logo.jpg" alt="BMW Logo" class="nav-bmw-logo" />
     </a>
-    <ul class="nav-links">
-      <li><a href="#" id="nav-home"       class="nav-link active"  onclick="showPage('home');return false;">หน้าแรก</a></li>
-      <li><a href="#" id="nav-about"      class="nav-link"         onclick="showPage('about');return false;">เกี่ยวกับเรา</a></li>
-      <li><a href="#" id="nav-models"     class="nav-link"         onclick="showPage('models');return false;">รุ่นรถ</a></li>
-      <li><a href="#" id="nav-innovation" class="nav-link"         onclick="showPage('innovation');return false;">นวัตกรรม</a></li>
-      <li><a href="#" id="nav-news"       class="nav-link"         onclick="showPage('news');return false;">ข่าวสาร</a></li>
-      <li><a href="#" id="nav-contact"    class="nav-link"         onclick="showPage('contact');return false;">ติดต่อ</a></li>
+    <ul class="nav-links" id="nav-links-list">
+      <li><a href="#" id="nav-home"       class="nav-link active"  onclick="showPage('home');closeMobileMenu();return false;">หน้าแรก</a></li>
+      <li><a href="#" id="nav-about"      class="nav-link"         onclick="showPage('about');closeMobileMenu();return false;">เกี่ยวกับเรา</a></li>
+      <li><a href="#" id="nav-models"     class="nav-link"         onclick="showPage('models');closeMobileMenu();return false;">รุ่นรถ</a></li>
+      <li><a href="#" id="nav-innovation" class="nav-link"         onclick="showPage('innovation');closeMobileMenu();return false;">นวัตกรรม</a></li>
+      <li><a href="#" id="nav-news"       class="nav-link"         onclick="showPage('news');closeMobileMenu();return false;">ข่าวสาร</a></li>
+      <li><a href="#" id="nav-contact"    class="nav-link"         onclick="showPage('contact');closeMobileMenu();return false;">ติดต่อ</a></li>
     </ul>
+    <!-- Hamburger button (mobile/tablet) -->
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="เปิดเมนู" onclick="toggleMobileMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </div>
 </nav>
+<!-- Mobile menu overlay backdrop -->
+<div class="nav-overlay" id="nav-overlay" onclick="closeMobileMenu()"></div>
 
 <!-- ═══════════════════════════════════════════════
      PAGE: HOME (หน้าแรก)

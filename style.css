@@ -1029,11 +1029,12 @@ body {
   padding: 36px 48px 48px;
 }
 .news-cards-row {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
   gap: 20px;
+  align-items: flex-start;
 }
 .news-card {
+  flex: 1;
   cursor: pointer;
   transition: transform 0.25s ease;
 }
@@ -1096,10 +1097,12 @@ body {
   margin-bottom: 28px;
 }
 .contact-cards {
-  display: grid; grid-template-columns: repeat(3,1fr);
-  gap: 16px; margin-bottom: 32px;
+  display: flex;
+  gap: 16px;
+  margin-bottom: 32px;
 }
 .con-card {
+  flex: 1;
   background: #eef4fb; border-radius: 12px;
   padding: 22px; text-align: center;
 }
@@ -1160,6 +1163,11 @@ body {
   border: 1.5px solid #c8daf0;
   border-radius: 14px;
   overflow: hidden;
+  overflow-x: auto;
+}
+#cap-table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 .cap-header {
   display: flex;
@@ -1355,3 +1363,424 @@ body {
   transition: transform 0.3s ease;
 }
 .footer-bmw-logo:hover { transform: rotate(12deg) scale(1.08); }
+
+/* ==========================================================
+   HAMBURGER MENU
+   ========================================================== */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  background: rgba(255,255,255,0.12);
+  border: 1.5px solid rgba(255,255,255,0.25);
+  border-radius: 8px;
+  cursor: pointer;
+  margin-left: auto;
+  padding: 6px;
+  transition: background 0.2s, transform 0.2s;
+  flex-shrink: 0;
+}
+.nav-hamburger:hover {
+  background: rgba(255,255,255,0.22);
+  transform: scale(1.05);
+}
+.nav-hamburger span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: #fff;
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease, width 0.3s ease;
+  transform-origin: center;
+}
+/* Hamburger → X animation */
+.nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; width: 0; }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Mobile menu overlay */
+.nav-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  z-index: 998;
+  backdrop-filter: blur(2px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.nav-overlay.show {
+  opacity: 1;
+}
+
+/* ==========================================================
+   BUTTON INTERACTIONS — Global
+   ========================================================== */
+/* Ripple effect base for interactive buttons */
+button, .nav-link, .soc-icon, .pg-btn, .pg-num, .products-btn,
+.cap-btn, .inno-tc-card, .bc-card, .prod-card, .news-card, .con-card {
+  position: relative;
+  overflow: hidden;
+}
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.35);
+  transform: scale(0);
+  animation: rippleAnim 0.55s linear;
+  pointer-events: none;
+}
+@keyframes rippleAnim {
+  to { transform: scale(4); opacity: 0; }
+}
+
+/* Nav-link press */
+.nav-link:active { transform: scale(0.96); }
+
+/* Pagination buttons */
+.pg-btn, .pg-num {
+  transition: background 0.18s, color 0.18s, transform 0.15s, box-shadow 0.18s;
+}
+.pg-btn:hover, .pg-num:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+.pg-btn:active, .pg-num:active { transform: scale(0.94); }
+
+/* Social icons */
+.soc-icon {
+  transition: background 0.18s, transform 0.2s, box-shadow 0.2s;
+}
+.soc-icon:hover {
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+.soc-icon:active { transform: scale(0.92); }
+
+/* Products button */
+.products-btn {
+  transition: background 0.22s, color 0.22s, transform 0.18s, box-shadow 0.22s;
+}
+.products-btn:hover {
+  background: #122344;
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(18,35,68,0.35);
+}
+.products-btn:active { transform: scale(0.96); }
+
+/* Innovation tech cards */
+.inno-tech-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.inno-tech-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(28,105,212,0.18);
+}
+
+/* News cards */
+.news-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+.news-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.15);
+}
+.news-card:active { transform: scale(0.98); }
+
+/* Contact info cards */
+.con-card {
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+.con-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(28,105,212,0.15);
+}
+
+/* Form inputs focus animations */
+.con-form input, .con-form select, .con-form textarea {
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
+}
+.con-form input:focus, .con-form select:focus, .con-form textarea:focus {
+  transform: scale(1.01);
+}
+
+/* Submit button */
+#cf-submit {
+  transition: background 0.22s, transform 0.18s, box-shadow 0.22s;
+}
+#cf-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(18,35,68,0.4);
+}
+#cf-submit:active { transform: scale(0.96); }
+
+/* Inno chips */
+.inno-chip {
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: default;
+}
+.inno-chip:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(28,105,212,0.2);
+}
+
+/* Footer links */
+.ft-col li {
+  transition: color 0.18s, transform 0.18s;
+}
+.ft-col li:hover {
+  color: rgba(255,255,255,0.9);
+  transform: translateX(3px);
+}
+
+/* ==========================================================
+   RESPONSIVE — TABLET (≤ 1024px)
+   ========================================================== */
+@media (max-width: 1024px) {
+  .nav-hamburger { display: flex; }
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -280px;
+    width: 260px;
+    height: 100dvh;
+    background: var(--navy);
+    flex-direction: column;
+    gap: 4px;
+    padding: 80px 20px 30px;
+    z-index: 999;
+    transition: right 0.35s cubic-bezier(0.4,0,0.2,1);
+    box-shadow: -4px 0 24px rgba(0,0,0,0.5);
+    list-style: none;
+  }
+  .nav-links.open { right: 0; }
+  .nav-overlay.show { display: block; }
+
+  .nav-link {
+    font-size: 15px;
+    padding: 12px 16px;
+    border-radius: 10px;
+    display: block;
+  }
+  .nav-link.active { background: var(--blue); }
+
+  /* Home hero */
+  .home-hero {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 28px 28px;
+    gap: 18px;
+  }
+  .storyboard-card { width: 100%; max-width: 380px; }
+  .bmw-hero-title { font-size: 44px; }
+
+  /* About section */
+  .about-section { padding: 18px 28px; }
+  .m-div-topbar { padding: 10px 28px; }
+  .m-div-body { padding: 18px 28px 22px; }
+
+  /* Products */
+  .products-section { padding: 22px 28px; }
+  .products-row { flex-wrap: wrap; gap: 14px; }
+  .prod-card { flex: 1 1 calc(50% - 7px); min-width: 200px; }
+
+  /* Banner */
+  .banner-section { flex-direction: column; }
+  .banner-right-col { flex: 0 0 auto; flex-direction: row; }
+  .autoverse-block, .mworld-block { flex: 1; }
+
+  /* Models */
+  .models-section { padding: 16px; }
+  .models-grid { grid-template-columns: 1fr 1fr; }
+
+  /* Footer */
+  .footer-main { flex-wrap: wrap; gap: 20px; padding: 20px 24px; }
+  .footer-right { grid-template-columns: repeat(2, 1fr); }
+
+  /* About page */
+  .about-page-hero { padding: 24px 28px; }
+  .apm-topbar { padding: 10px 28px; }
+  .apm-body { padding: 18px 28px 22px; }
+
+  /* Innovation */
+  .inno-tech-grid { grid-template-columns: repeat(2, 1fr); }
+  .inno-hero { padding: 48px 28px; }
+  .inno-stats-strip { flex-wrap: wrap; gap: 0; }
+  .inno-stat { flex: 1 1 50%; padding: 16px; }
+  .inno-stat-divider:nth-child(4) { display: none; }
+  .inno-spotlight { flex-direction: column; padding: 32px 28px; gap: 24px; }
+  .inno-nav-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* News */
+  .news-cards-row { flex-wrap: wrap; gap: 14px; }
+  .news-card { flex: 1 1 calc(50% - 7px); min-width: 200px; }
+
+  /* Contact */
+  .contact-section { padding: 28px; }
+}
+
+/* ==========================================================
+   RESPONSIVE — MOBILE (≤ 640px)
+   ========================================================== */
+@media (max-width: 640px) {
+  /* Navbar */
+  .nav-inner { padding: 6px 14px; }
+  .nav-bmw-logo { width: 50px; height: 50px; }
+
+  /* Home hero */
+  .home-hero {
+    padding: 20px 16px;
+    min-height: auto;
+    gap: 14px;
+  }
+  .bmw-hero-title { font-size: 34px; letter-spacing: 2px; }
+  .bmw-hero-tagline { font-size: 11px; letter-spacing: 2px; }
+  .bmw-hero-desc { font-size: 12px; }
+  .storyboard-card { width: 100%; max-width: 100%; }
+  .sb-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* About section */
+  .about-section {
+    flex-direction: column;
+    padding: 16px;
+    gap: 10px;
+  }
+  .about-card p { font-size: 11px; }
+
+  /* M Division */
+  .m-div-topbar { padding: 10px 16px; }
+  .m-div-body {
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+    gap: 16px;
+  }
+  .m-div-card { max-width: 100%; }
+  .m-div-bmwlogo-img { width: 90px; height: 90px; }
+
+  /* Products */
+  .products-section { padding: 18px 16px; }
+  .products-row { flex-direction: column; gap: 12px; }
+  .prod-card { flex: 1 1 100%; }
+  .prod-img { height: 160px; }
+
+  /* Banner */
+  .banner-section { flex-direction: column; }
+  .banner-cars { padding: 14px 14px; }
+  .bc-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .bc-car-img-wrap { height: 120px; }
+  .banner-right-col { flex-direction: column; }
+  .autoverse-block, .mworld-block { padding: 14px; }
+
+  /* Footer */
+  .footer-main {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 18px 16px;
+    gap: 18px;
+  }
+  .footer-right { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .footer-logo-col { align-self: flex-end; }
+
+  /* About page */
+  .about-page-hero { padding: 18px 16px; }
+  .aph-card p { font-size: 11px; }
+  .apm-topbar { padding: 10px 16px; }
+  .apm-body {
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+    gap: 14px;
+  }
+  .apm-card { max-width: 100%; }
+  .apm-bmwlogo-img { width: 90px; height: 90px; }
+
+  /* Models */
+  .models-section { padding: 10px; }
+  .models-grid { grid-template-columns: 1fr; gap: 0; }
+  .model-cell { flex-direction: column; min-height: auto; }
+  .model-img-wrap { width: 100%; height: 200px; }
+  .model-text { padding: 10px 12px 14px; }
+  .models-watermark { font-size: 120px; }
+  .models-pager { flex-wrap: wrap; gap: 4px; padding: 12px 10px; }
+
+  /* Innovation hero */
+  .inno-hero { padding: 32px 16px; min-height: auto; }
+  .inno-hero-title { font-size: 28px; }
+  .inno-stats-strip { flex-direction: column; }
+  .inno-stat { flex: 1 1 100%; border-right: none !important; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .inno-stat-divider { display: none; }
+  .inno-tech-section { padding: 20px 16px; }
+  .inno-tech-grid { grid-template-columns: 1fr; }
+  .inno-spotlight { flex-direction: column; padding: 24px 16px; }
+  .inno-spot-title { font-size: 24px; }
+  .inno-nav-section { padding: 20px 16px 24px; }
+  .inno-nav-grid { grid-template-columns: 1fr; }
+
+  /* News */
+  .news-hero-split { height: 200px; }
+  .news-cards-section { padding: 18px 16px; }
+  .news-cards-row { flex-direction: column; gap: 14px; }
+  .news-card { flex: 1 1 100%; }
+
+  /* Contact */
+  .contact-section { padding: 18px 16px; }
+  .contact-cards { flex-direction: column; gap: 12px; }
+  .con-row { flex-direction: column; gap: 10px; }
+  .con-form input, .con-form select, .con-form textarea {
+    width: 100%;
+  }
+  .cap-header { flex-direction: column; gap: 10px; }
+  .cap-actions { flex-direction: row; gap: 8px; }
+  .cap-table { font-size: 11px; }
+  .cap-table th, .cap-table td { padding: 7px 8px; }
+  .cap-msg-cell { max-width: 120px; }
+}
+
+/* ==========================================================
+   RESPONSIVE — SMALL MOBILE (≤ 390px)
+   ========================================================== */
+@media (max-width: 390px) {
+  .bmw-hero-title { font-size: 28px; }
+  .footer-right { grid-template-columns: 1fr; gap: 10px; }
+  .bc-cards-grid { grid-template-columns: 1fr; }
+  .models-grid { grid-template-columns: 1fr; }
+  .inno-nav-grid { grid-template-columns: 1fr; }
+  .news-cards-row { flex-direction: column; }
+}
+
+/* ==========================================================
+   SMOOTH PAGE TRANSITIONS
+   ========================================================== */
+.page {
+  animation: none;
+}
+.page.active {
+  animation: pageFadeIn 0.35s ease;
+}
+@keyframes pageFadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================
+   MODELS GRID — Responsive fix
+   ========================================================== */
+@media (min-width: 641px) {
+  .models-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .model-cell {
+    display: flex;
+    flex-direction: column;
+  }
+}
